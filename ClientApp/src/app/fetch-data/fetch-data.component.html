@@ -2,23 +2,39 @@
 
 <p>This component demonstrates fetching data from the server.</p>
 
-<p *ngIf="!forecasts"><em>Loading...</em></p>
+<button (click)="splitioService.getTreatments()">Show Forcast</button>
+<div *ngFor="let feature of splitioService.features">
+  <div *ngIf="splitioService.treatments && splitioService.treatments[feature]">  
+    <div *ngIf="splitioService.treatments[feature]=='on'">
+      <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Temp. (C)</th>
+            <th>Temp. (F)</th>
+            <th>Summary</th>
+          </tr>
+        </thead>
+      <tbody>
+        <tr *ngFor="let forecast of forecasts">
+          <td>{{ forecast.date }}</td>
+          <td>{{ forecast.temperatureC }}</td>
+          <td>{{ forecast.temperatureF }}</td>
+          <td>{{ forecast.summary }}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Temp. (C)</th>
-      <th>Temp. (F)</th>
-      <th>Summary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.date }}</td>
-      <td>{{ forecast.temperatureC }}</td>
-      <td>{{ forecast.temperatureF }}</td>
-      <td>{{ forecast.summary }}</td>
-    </tr>
-  </tbody>
-</table>
+<div *ngFor="let feature of splitioService.features">
+  <div *ngIf="splitioService.treatments && splitioService.treatments[feature]">  
+    <div *ngIf="splitioService.treatments[feature]=='off'">
+    <p>This Feature is not available for your account</p>  
+    </div>
+  </div>
+</div>
+
+
+

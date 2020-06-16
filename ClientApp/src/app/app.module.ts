@@ -1,3 +1,4 @@
+import { SplitioService } from './splitio.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -31,7 +32,7 @@ import { UploadComponent } from './upload/upload.component';
       { path: 'upload', component: UploadComponent },
     ])
   ],
-  providers: [],
+  providers: [SplitioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
