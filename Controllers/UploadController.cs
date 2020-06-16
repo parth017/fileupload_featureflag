@@ -34,7 +34,7 @@ namespace Angular5FileUpload.Controllers
                 // log & handle
             }
 
-            var treatment = splitClient.GetTreatment("parth","testsplit");
+            var treatment = splitClient.GetTreatment("parth", "weather_feature");
             if (treatment == "on")
             {
                 var file = Request.Form.Files[0];

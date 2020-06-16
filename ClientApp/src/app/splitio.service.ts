@@ -10,7 +10,7 @@ export class SplitioService {
   isReady = false;
   treatments: SplitIO.Treatments;
   features: string[] = [
-    'testsplit',
+    'weather_feature',
 
   ];
 
@@ -22,7 +22,7 @@ export class SplitioService {
     this.splitio = SplitFactory({
       core: {
         authorizationKey: 'v0gs87g1pd0frk07c62eqdr1kkhebo05bkne',
-        key: 'parth'
+        key: 'joel'
       },
     });
 

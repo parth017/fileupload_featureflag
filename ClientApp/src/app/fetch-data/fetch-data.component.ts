@@ -23,7 +23,7 @@ export class FetchDataComponent {
 
   ngOnInit() {
     this.splitioService.initSdk();
-    
+
     }  
 }
 
